@@ -1,41 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Learn jQuery</title>
     <style>
-        body{
-            font-family: arial;
-        }
-        #box{
-            background: #DB7093;
-            padding: 20px;
-            border: 1px solid #000;
-        }
+      body {
+        font-family: arial;
+      }
+      #box {
+        background: #db7093;
+        padding: 20px;
+        border: 1px solid #000;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Form events</h1>
     <form action="" id="sform">
-        <label for="">Name</label><input type="email" name="" id="sname"><br>
-        <label for="">Name</label><input type="text" name="" id="sclass"><br>
-        <label for="">Country</label>
-        <Select id = 'scountry'>
-            <!-- scountry means student country, similarly for others -->
-            <option value="">Choose one</option>
-            <option value="India">India</option>
-            <option value="Bangladesh">Bangladesh</option>
-            <option value="Sri lanka">Sri Lanka</option>
-            <option value="Pakistan">Pakistan</option>
-        </Select>
-        <br><br>
-        <input type="submit">
+      <label for="">Name</label><input type="email" name="" id="sname" /><br />
+      <label for="">Class</label><input type="text" name="" id="sclass" /><br />
+      <label for="">Country</label>
+      <select id="scountry">
+        <!-- scountry means student country, similarly for others -->
+        <option value="">Choose one</option>
+        <option value="India">India</option>
+        <option value="Bangladesh">Bangladesh</option>
+        <option value="Sri lanka">Sri Lanka</option>
+        <option value="Pakistan">Pakistan</option>
+      </select>
+      <br /><br />
+      <input type="submit" />
     </form>
+    <div
+      id="exam"
+      style="border: 3px dashed yellowgreen; margin-top: 15px"
+    ></div>
     <script src="js/jquery-4.0.0.min.js"></script>
     <script>
+      $(document).ready(function () {
+        $("#sname, #sclass").focus(function () {
+          // focus shob dhoroner input er sathe hoi
+          $(this).css("background-color", "green");
+        }); // focus er meaning okhane click korle erokom action/change hobe. hover korle hobe na
+        $("#sname, #sclass, #scountry").blur(function () {
+          $(this).css("background-color", "");
+        }); //blur er meaning okhan theke click shorale erokom action/change hobe. hover korle hobe na. etao sob input er sathe hoi
 
+        $("#scountry").change(function () {
+          // scountry er upor deya hoise, karon change event/ function ta option/select er sathe use kora hoi
+          $(this).css("background-color", "pink");
+          var a = $(this).val(); //val means value here
+          $("#exam").html(a);
+        });
+
+        $("#sname, #sclass").select(function () {
+          $(this).css("background-color", "skyblue");
+        }); // jquery 'select event' sudhu input box er sathe hoi, option/html select er sathe hoina. tai scountry ekhane ni. & eta front-end e input e kisu lekhar por select korle active hoi
+
+        $("#sform").submit(function (e) {
+            e.preventDefault();
+            alert("Form submitted");
+          console.log("form submitted");
+        });
+      });
     </script>
-    
-</body>
+  </body>
 </html>
