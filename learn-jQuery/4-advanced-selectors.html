@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn jQuery</title>
+
+  <style>
+    body { font-family: arial; }
+
+    #box {
+      padding: 10px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Yahoo Baba : jQuery Selectors</h1>
+
+  <div id="box" class="test">
+    <h2>Test Box 2</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, laudantium.</p>
+  </div>
+
+  <ul id="list">
+    <li>Orange</li>
+    <li>Banana</li>
+    <li>Grapes</li>
+    <li>Apple</li>
+    <li>Guava</li>
+  </ul>
+  <script src="js/jquery-4.0.0.min.js"></script>
+  <script>
+    $(document).ready(function(){
+        $("#list").css("color","red");
+        $("#list").css("border","2px solid red");
+        $("ul li:eq(2)").css("border","2px solid red");
+        // last ul li: eq(2) diye 3rd list item ta select korbe, karon 3rd tar index 2 since index starts from 0.
+
+    });
+  </script>
+
+</body>
+</html>

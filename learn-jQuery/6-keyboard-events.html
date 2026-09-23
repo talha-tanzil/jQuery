@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial
+        }
+        #box{
+            background: pink;
+            padding: 20px;
+            border: 2px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Talha: jQuery mouse events</h1>
+    <div id="box" class="test">
+        <h2>Test Box</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('body').keypress(function(){
+                $(this).css('background-color', 'green');
+            });
+            $('body').keyup(function(){
+                $(this).css('background-color', '#59b4c2');
+            });
+        });
+    </script>
+    </body>
+    </html>
