@@ -1,4 +1,5 @@
-<!-- 4types of get method, text(), html(), attr(), val() -->
+<!-- set method means value ta .val er vitore message er moto kore pathai deya -->
+ <!-- 4types of get method similar to set method, text(), html(), attr(), val() -->
 <!doctype html>
 <html lang="en">
   <head>
@@ -18,6 +19,9 @@
       h1 {
         text-align: center;
       }
+      .red{
+        color: green;
+      }
     </style>
   </head>
   <body>
@@ -29,17 +33,16 @@
         Molestias dolor odit ea veniam porro quae
       </p>
     </div>
+    <br />
+    <button id="clickbutton">Set Value</button>
     <script src="js/jquery-4.0.0.min.js"></script>
     <script>
       $(document).ready(function () {
-        var a = $("body").html();
-        console.log(a);
-        var a = $("#box p").html();
-        console.log(a);
-        var b = $("#box p").text();
-        console.log(b);
-        var c = $("#box").attr("class");
-        console.log(c);
+        $("#clickbutton").click(function () {
+          $("#box h2").text("Hey <b>TALHA</b>");
+          $("#box p").html("Hey <b>TALHA</b>Welcome to your site.");
+          $("#box p").attr("class", "green");
+        });
       });
     </script>
   </body>
