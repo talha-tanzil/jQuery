@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn jQuery</title>
+    <style>
+      body {
+        font-family: arial;
+      }
+      #box {
+        border: 2px dashed blue;
+      }
+      h2,
+      p,
+      h1 {
+        text-align: center;
+      }
+      .add {
+        background: yellowgreen;
+      }
+      .remove {
+        background: #d6b4fc;
+      }
+    </style>
+    <!-- in javascript: You don't use a dot (.) inside addClass() or removeClass(). The dot is used when selecting a class, for example:
+
+$('.add')
+
+But when passing a class name to these methods, just write "add". -->
+  </head>
+  <body>
+    <h1>jQuery Get methods</h1>
+    <div id="box" class="test abc">
+      <h2>Test box</h2>
+      <p>
+        Lorem ipsum dolor, sit <span>amet consectetur adipisicing</span> elit.
+        Molestias dolor odit ea veniam porro quae
+      </p>
+    </div>
+    <br /><br /><br />
+    <button id="addButton">Add Class</button>
+    <button id="removeButton">Remove Class</button>
+    <button id="toggleButton">Toggle Class</button>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // VVI NB: ekhane ai line ta na dileo hobe
+        $("#addButton").click(function () {
+          $("#box").addClass("add"); // aikhane addClass function er vitore '.' deya lagbe na
+          $("h1").addClass("remove");
+        });
+        $("#removeButton").click(function () {
+          $("#box").removeClass("add"); // add lekha hoise karon add tarei remove kora hocche
+          // $('h1').removeClass("remove");
+        });
+        $("#toggleButton").click(function () {
+          $("h1, #box").toggleClass("remove");
+        });
+      });
+    </script>
+  </body>
+</html>
