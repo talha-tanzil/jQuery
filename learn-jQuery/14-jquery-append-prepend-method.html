@@ -1,5 +1,4 @@
-<!-- jscript css methods are actually css inline methods -->
- <!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -11,6 +10,7 @@
       }
       #box {
         border: 2px dashed blue;
+        background: lightgreen;
       }
       h2,
       p,
@@ -28,16 +28,26 @@
         Molestias dolor odit ea veniam porro quae
       </p>
     </div>
-    <br /><br /><br />
-    <button id="styleButton">Add Class</button>
+    <!-- <ol>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+    </ol> -->
+    <br><br><br7>
+    <button id="appendbtn">Append Button</button>
+    <button id="prependbtn">Prepend Button</button>
     <script src="js/jquery-4.0.0.min.js"></script>
     <script>
         $(document).ready(function(){
-            $('#styleButton').click(function(){
-                $('#box').css("background","red");// er mane single kore css value dile "property", "value" evabe likbe. kintu eki sathe koyekta css property use korle curly brace, colon & comma use hoi. it's mentioned below
-                $('#box').css({"Background": "#d6b4fc", "color": "green","border": "4px dotted green"});
+            $('#appendbtn').click(function(){
+                $('#box').append("<h3>Talha boss</h3>");
+                // $('ol').append("<li>new item</li>");
+            });
+            $('#prependbtn').click(function(){
+                $('#box').prepend("<h3 style='text-align:center'>Talha boss</h3>");
+                // $('ol').prepend("<li>new item</li>");
             });
         });
-    </script>
-    </body>
-</html>
+        </script>
+        </body>
+        </html>
