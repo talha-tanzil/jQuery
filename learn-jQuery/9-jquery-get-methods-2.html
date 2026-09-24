@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn jQuery</title>
+    <style>
+      body {
+        font-family: arial;
+      }
+      #box {
+        background: #db7093;
+        padding: 20px;
+        border: 1px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Form events</h1>
+    <form action="" id="sform">
+      <label for="">Name</label><input type="text" name="" id="sname" /><br />
+      <label for="">Class</label><input type="text" name="" id="sclass" /><br />
+      <label for="">Country</label>
+      <select id="scountry">
+        <!-- scountry means student country, similarly for others -->
+        <option value="">Choose one</option>
+        <option value="India">India</option>
+        <option value="Bangladesh">Bangladesh</option>
+        <option value="Sri lanka">Sri Lanka</option>
+        <option value="Pakistan">Pakistan</option>
+      </select>
+      <br /><br />
+      <input type="submit" />
+    </form>
+    <div
+      id="exam"
+      style="border: 3px dashed yellowgreen; margin-top: 15px"
+    ></div>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#sform").submit(function (){
+            var a= $("#sname").val();
+            var b= $("#sclass").val();
+            var c= $('#scountry').val();
+            alert("Hello " + a + " class: "+ b+ " country: "+c);
+            });
+             
+        });
+    </script>
+    </body>
+    </html>
