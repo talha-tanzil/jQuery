@@ -1,0 +1,62 @@
+<!-- jQuery clone() method, very interesting. plus appendTo(), prependTo method -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn jQuery</title>
+    <style>
+      body {
+        font-family: arial;
+      }
+      #box {
+        border: 2px dashed blue;
+        background: lightgreen;
+      }
+      #box2 {
+        border: 2px dashed blue;
+        background: rgb(205, 113, 91);
+      }
+
+      h2,
+      p,
+      h1 {
+        text-align: center;
+      }
+      </style>
+      </head>
+  <body>
+    <h1>jQuery Clone method</h1>
+    <div id="box" class="original-box test abc">
+      <h2>Test box</h2>
+      <p>
+        Lorem ipsum dolor, sit <span>amet consectetur adipisicing</span> elit.
+        Molestias dolor odit ea veniam porro quae
+      </p>
+    </div>
+    <br>
+    <div id="box2">
+      <p>This is box 2.</p>
+    </div>
+
+    <br><br><br7>
+    <button id="clonebtn">Clone Button</button>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#clonebtn').click(function(){
+              // $('#box h2').clone().prependTo("#box2");
+                $('#box').clone().prependTo("#box2");// ai '.' use kora take jquery te chaining method bole. eta niye pore explain kora hobe. stay tuned with me
+                // $('#box').clone().prependTo("#box2");
+                // $('#box p').clone().appendTo("#box2");
+                $('#box> p').first().clone().appendTo("#box2");// first() eta ekta method, it means jei paragraph gulo pabo loop e, tar 1st take select kora. kintu similarly second()/third() etc method hoina 
+                //  $('#box> p').eq(0).clone().appendTo("#box2"); //eq(0), eq(1) etc previous second()/ third() etc na likte parar issue ta solve kore, ekhane 0,1,2 .. egulo index. 
+                // VVI Info: '#box> p' means direct child paragraphs tag whereas '#box p' all the paragraphs of #box. if confused, check with claude/gpt.
+                // $('.original-box > p').clone().appendTo("#box2");
+                // $('.original-box > p').first().clone().appendTo("#box2");
+            });
+        });
+        </script>
+        </body>
+        </html>
