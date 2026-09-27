@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial;
+      }
+      #box {
+        background: rgb(216, 216, 188);
+        border: 2px dashed blue;
+      }
+      h1,
+      h2,
+      p {
+        text-align: center;
+      }
+      .test {
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>jQuery replaceWith() and replaceAll() methods</h1>
+    <div id="box">
+      <h1>jQuery method Testing</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, eaque.
+      </p>
+    </div>
+    <button id="wrapbtn">Wrap</button>
+    <button id="unwrapbtn">Unwrap</button>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#wrapbtn").click(function () {
+          $("#box p").wrap('<h2 class="test"></h2>');
+        });
+        $("#unwrapbtn").click(function () {
+            $('#box p').unwrap(); //aikhane kono parameter pass kora lagbe na
+        });
+      });
+    </script>
+  </body>
+</html>
