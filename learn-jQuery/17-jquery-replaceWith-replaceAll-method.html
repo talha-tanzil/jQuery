@@ -1,0 +1,57 @@
+<!-- replaceWith() e 1st selector, 2nd e method erpor content
+ replaceAll() e 1st e content, 2nd e selector. another difference: picture 26, read that first, VVI -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      #box {
+        background: rgb(216, 216, 188);
+        border: 2px dashed blue;
+      }
+      h1,
+      p {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>jQuery replaceWith() and replaceAll() methods</h1>
+    <div id="box">
+        <h1>jQuery method Testing</h1>
+      <p>
+        Lorem ipsum dolor sit <span>amet consectetur adipisicing</span> elit.
+        Est, eaque.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, est?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, porro.
+      </p>
+    </div>
+    <button id="replacebtn">Replace With</button>
+    <button id="replaceBtn">Replace All</button>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#replacebtn").click(function(){
+                $('#box p:first').replaceWith("<h2>Talha Brother</h2>");
+                // $('#box p:first-child').replaceWith("<h2>Talha Brother</h2>"); //first and first-child lekha eki bisoi na. p tag ta div er 1st tag hole same mean korto.p:first-child matches no paragraph here so. 
+                $('#box p:nth-child(3)').replaceWith("Talha Brother"); //it means 3rd tag/child of the id='box' aka 2nd p tag here.
+
+            });
+            $("#replaceBtn").click(function(){
+                $('Talha brother').replaceAll('#box p:first');
+                $('<p>Talha brother</p>').replaceAll('#box p:nth-child(3)');
+                // $('<p>Talha brother</p>').replaceAll('#box p');
+            });
+        });
+    </script>
+  </body>
+</html>
