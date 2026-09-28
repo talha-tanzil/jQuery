@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial;
+      }
+      #box {
+        background: rgb(216, 216, 188);
+        border: 2px dashed blue;
+      }
+      h1,
+      h2,
+      p {
+        text-align: center;
+      }
+      .test {
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>jQuery slideUp, slideDown & slideToggle methods</h1>
+    <div id="box">
+      <h1>jQuery method Testing</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, eaque.
+      </p>
+    </div>
+    <button id="slideUpbtn">Slide Up</button>
+    <button id="slideDownbtn">Slide Down</button>
+    <button id="togglebtn">Toggle Slide</button>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#slideUpbtn").click(function () {
+          $("#box").slideUp(3000, function(){
+            console.log("Now it'slide up");
+          });
+        });
+        $("#slideDownbtn").click(function () {
+            $('#box').slideDown("fast");
+        });
+        $("#togglebtn").click(function () {
+            $('#box').slideToggle();
+        });
+    });
+    </script>
+  </body>
+</html>
