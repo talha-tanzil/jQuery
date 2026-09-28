@@ -1,0 +1,52 @@
+<!-- Why does fontSize work but left and top don't if I don't use position: relative inside #box?
+
+fontSize changes the text size and doesn't require positioning.
+
+left and top control the position of a positioned element.
+
+width changes the element's width and doesn't require positioning. -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial;
+      }
+      #box {
+        background: rgb(216, 216, 188);
+        height: 80px;
+        width: 80px;
+        padding: 10px;
+        border: 2px dashed blue;
+        position: relative;
+      }
+      h1,
+      p {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>jQuery animate methods</h1>
+    <div id="box">
+      <h6>Talha's method Testing: Animate</h6>
+    </div>
+    <button class="animatebtn">Animate</button>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".animatebtn").click(function () {
+          $("#box").animate({left: '150px', fontSize: '25px'}, 3000, function () {
+            console.log("Now it's animated");
+          });
+          $("#box").animate({top: 150});
+          $("#box").animate({width: 150});
+        });
+      });
+    </script>
+  </body>
+</html>
