@@ -1,4 +1,3 @@
-<!-- also relevant wrapAll() & wrapInner() method covered, reference photo26 -->
 <!doctype html>
 <html lang="en">
   <head>
@@ -24,25 +23,31 @@
     </style>
   </head>
   <body>
-    <h1>jQuery wrap() and unwrap() methods</h1>
+    <h1>jQuery hide(), show() and toggle() methods</h1>
     <div id="box">
       <h1>jQuery method Testing</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, eaque.
       </p>
     </div>
-    <button id="wrapbtn">Wrap</button>
-    <button id="unwrapbtn">Unwrap</button>
+    <button id="hidebtn">Hide</button>
+    <button id="showbtn">Show</button>
+    <button id="togglebtn">Toggle</button>
     <script src="js/jquery-4.0.0.min.js"></script>
     <script>
       $(document).ready(function () {
-        $("#wrapbtn").click(function () {
-          $("#box p").wrap('<h2 class="test"></h2>');
+        $("#hidebtn").click(function () {
+          $("#box").hide(3000, function(){
+            console.log("Now it's hidden");
+          });
         });
-        $("#unwrapbtn").click(function () {
-            $('#box p').unwrap(); //aikhane kono parameter pass kora lagbe na
+        $("#showbtn").click(function () {
+            $('#box').show("fast");
         });
-      });
+        $("#togglebtn").click(function () {
+            $('#box').toggle();
+        });
+    });
     </script>
   </body>
 </html>
