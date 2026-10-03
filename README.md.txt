@@ -1,0 +1,1 @@
+A structured collection of my jQuery learning exercises, covering basic syntax, selectors, events, DOM manipulation, effects, animation, and AJAX, with reference screenshots and practice examples.
